@@ -1,0 +1,350 @@
+{
+  "specifications": {
+    "MIG": {
+      "power_input_120v": "120VAC / 60Hz",
+      "power_input_240v": "240VAC / 60Hz",
+      "current_input_at_output_120v": "20.8A at 100A",
+      "current_input_at_output_240v": "25.5A at 200A",
+      "welding_current_range_120v": "30-140A",
+      "welding_current_range_240v": "30-220A",
+      "rated_duty_cycles_120v": "40% @ 100A, 100% @ 75A",
+      "rated_duty_cycles_240v": "25% @ 200A, 100% @ 115A",
+      "maximum_ocv": "86VDC",
+      "weldable_materials": "Mild Steel, Stainless Steel, Aluminum (with optional Spool Gun)",
+      "welding_wire_capacity": "Solid Core: 0.025\"/0.030\"/0.035\", Flux Core: 0.030\"/0.035\"/0.045\"",
+      "wire_speed": "50-500 IPM",
+      "wire_spool_capacity": "Up to 12 lb spool"
+    },
+    "TIG": {
+      "power_input_120v": "120VAC / 60Hz",
+      "power_input_240v": "240VAC / 60Hz",
+      "current_input_at_output_120v": "20.6A at 125A",
+      "current_input_at_output_240v": "15.6A at 175A",
+      "welding_current_range_120v": "10A-125A",
+      "welding_current_range_240v": "10A-175A",
+      "rated_duty_cycles_120v": "40% @ 125A, 100% @ 80A",
+      "rated_duty_cycles_240v": "30% @ 175A, 100% @ 105A",
+      "maximum_ocv": "86VDC",
+      "weldable_materials": "Mild Steel, Stainless Steel, Chrome Moly"
+    },
+    "Stick": {
+      "power_input_120v": "120VAC / 60Hz",
+      "power_input_240v": "240VAC / 60Hz",
+      "current_input_at_output_120v": "19.5A at 80A",
+      "current_input_at_output_240v": "23.7A at 175A",
+      "welding_current_range_120v": "10A-80A",
+      "welding_current_range_240v": "10A-175A",
+      "rated_duty_cycles_120v": "40% @ 80A, 100% @ 60A",
+      "rated_duty_cycles_240v": "25% @ 175A, 100% @ 100A",
+      "maximum_ocv": "86VDC",
+      "weldable_materials": "Mild Steel, Stainless Steel"
+    }
+  },
+  "duty_cycles": {
+    "source_page": 29,
+    "description": "Duty Cycle defines the number of minutes within a 10 minute period during which a given welder can produce a particular welding current without overheating.",
+    "TIG": {
+      "240VAC": {
+        "rated": "30% @ 175A, 100% @ 105A",
+        "175A": {"duty_cycle_percent": 30, "weld_minutes": 3.0, "cool_minutes": 7.0},
+        "105A": {"duty_cycle_percent": 100, "weld_minutes": 10.0, "cool_minutes": 0.0}
+      },
+      "120VAC": {
+        "rated": "40% @ 125A, 100% @ 80A",
+        "125A": {"duty_cycle_percent": 40, "weld_minutes": 4.0, "cool_minutes": 6.0},
+        "80A": {"duty_cycle_percent": 100, "weld_minutes": 10.0, "cool_minutes": 0.0}
+      }
+    },
+    "Stick": {
+      "240VAC": {
+        "rated": "25% @ 175A, 100% @ 100A",
+        "175A": {"duty_cycle_percent": 25, "weld_minutes": 2.5, "cool_minutes": 7.5},
+        "100A": {"duty_cycle_percent": 100, "weld_minutes": 10.0, "cool_minutes": 0.0}
+      },
+      "120VAC": {
+        "rated": "40% @ 80A, 100% @ 60A",
+        "80A": {"duty_cycle_percent": 40, "weld_minutes": 4.0, "cool_minutes": 6.0},
+        "60A": {"duty_cycle_percent": 100, "weld_minutes": 10.0, "cool_minutes": 0.0}
+      }
+    },
+    "MIG": {
+      "240VAC": {
+        "rated": "25% @ 200A, 100% @ 115A",
+        "200A": {"duty_cycle_percent": 25, "weld_minutes": 2.5, "cool_minutes": 7.5},
+        "115A": {"duty_cycle_percent": 100, "weld_minutes": 10.0, "cool_minutes": 0.0}
+      },
+      "120VAC": {
+        "rated": "40% @ 100A, 100% @ 75A",
+        "100A": {"duty_cycle_percent": 40, "weld_minutes": 4.0, "cool_minutes": 6.0},
+        "75A": {"duty_cycle_percent": 100, "weld_minutes": 10.0, "cool_minutes": 0.0}
+      }
+    }
+  },
+  "polarity": {
+    "source_pages": [14, 15, 16],
+    "MIG": {
+      "type": "DCEP",
+      "full_name": "Direct Current Electrode Positive",
+      "ground_clamp": "Negative (-) Socket",
+      "power_cable": "Positive (+) Socket",
+      "description": "Plug Ground Clamp Cable into Negative (-) Socket. Plug Wire Feed Power Cable into Positive (+) Socket. Twist cables clockwise all the way to lock in place."
+    },
+    "Flux-Core": {
+      "type": "DCEN",
+      "full_name": "Direct Current Electrode Negative",
+      "ground_clamp": "Positive (+) Socket",
+      "power_cable": "Negative (-) Socket",
+      "description": "Plug Ground Clamp Cable into Positive (+) Socket. Plug Wire Feed Power Cable into Negative (-) Socket. Twist cables clockwise all the way to lock in place."
+    },
+    "TIG": {
+      "type": "DCEN",
+      "full_name": "Direct Current Electrode Negative",
+      "ground_clamp": "Positive (+) Socket",
+      "tig_torch": "Negative (-) Socket",
+      "description": "Plug Ground Clamp Cable into Positive (+) Socket. Plug TIG Torch Cable into Negative (-) Socket. Twist cables clockwise all the way to lock in place."
+    },
+    "Stick": {
+      "type": "DCEP or DCEN",
+      "full_name": "Depends on electrode type",
+      "dcep_description": "For DCEP: Ground Clamp in Negative (-) Socket, Electrode Holder in Positive (+) Socket.",
+      "dcen_description": "For DCEN: Ground Clamp in Positive (+) Socket, Electrode Holder in Negative (-) Socket.",
+      "note": "Check electrode packaging for recommended polarity."
+    }
+  },
+  "front_panel_controls": {
+    "source_page": 8,
+    "components": {
+      "home_button": {"position": "top-left", "description": "Returns to home screen"},
+      "control_knob": {"position": "left-center", "description": "Navigate menus"},
+      "left_knob": {"position": "left-lower", "description": "Adjust left parameter"},
+      "power_switch": {"position": "left-bottom", "description": "ON/OFF switch"},
+      "mig_gun_socket": {"position": "bottom-left", "description": "MIG Gun / Spool Gun Cable Socket"},
+      "spool_gun_gas_outlet": {"position": "bottom-left-2", "description": "Spool Gun Gas Outlet"},
+      "negative_socket": {"position": "bottom-center-left", "description": "Negative (-) Socket"},
+      "wire_feed_power_cable": {"position": "bottom-center", "description": "Wire Feed Power Cable"},
+      "positive_socket": {"position": "bottom-right", "description": "Positive (+) Socket"},
+      "storage_compartment": {"position": "right-center", "description": "Storage Compartment"},
+      "right_knob": {"position": "right-lower", "description": "Adjust right parameter"},
+      "lcd_display": {"position": "center", "description": "LCD Display"},
+      "back_button": {"position": "top-right", "description": "Back / return to previous screen"}
+    }
+  },
+  "interior_controls": {
+    "source_page": 9,
+    "components": {
+      "cold_wire_feed_switch": {"description": "Feeds wire without welding"},
+      "wire_feed_mechanism": {"description": "Drives welding wire"},
+      "wire_spool": {"description": "Holds wire spool, up to 12 lb"},
+      "spool_knob": {"description": "Secures wire spool"},
+      "wire_inlet_liner": {"description": "Guides wire from spool to mechanism"},
+      "feed_tensioner": {"description": "Adjusts wire feed tension"},
+      "idler_arm": {"description": "Applies pressure to wire against drive roller"},
+      "feed_roller_knob": {"description": "Secures feed roller"},
+      "foot_pedal_socket": {"description": "Connection for optional TIG foot pedal"},
+      "wire_feed_control_socket": {"description": "Wire feed control connection"}
+    }
+  },
+  "troubleshooting": {
+    "source_pages": [42, 43, 44],
+    "entries": [
+      {
+        "problem": "Wire Feed Motor Runs but Wire Does Not Feed Properly",
+        "possible_causes": [
+          "Insufficient wire feed pressure",
+          "Incorrect wire feed roller size",
+          "Damaged MIG Gun, cable, or liner assembly",
+          "Feed Tensioner is too tight"
+        ],
+        "solutions": [
+          "Increase wire feed pressure properly. Follow step 27 on page 17",
+          "Replace with correct size roller. Follow the Feed Roller instructions on page 12",
+          "Have a qualified technician inspect these parts and replace as necessary",
+          "Loosen Feed Tensioner so it applies only enough pressure to prevent continued spinning after the Gun Trigger is released"
+        ]
+      },
+      {
+        "problem": "Wire Creates a Bird's Nest During Operation",
+        "possible_causes": [
+          "Excess wire feed pressure",
+          "Incorrect Contact Tip size",
+          "MIG Gun Cable Connector not fully inserted into Wire Feed mechanism",
+          "Damaged liner"
+        ],
+        "solutions": [
+          "Adjust wire feed pressure properly. Follow step 27 on page 17",
+          "Replace with the proper tip for wire used",
+          "Insert Gun Cable Connector properly. Follow steps 13 and 14 on page 13",
+          "Have a qualified technician inspect and repair/replace as necessary"
+        ]
+      },
+      {
+        "problem": "Wire Stops During Welding",
+        "possible_causes": [
+          "Gun cable is severely bent and Wire Feed mechanism cannot feed wire",
+          "Gun liner is clogged or worn",
+          "Gun liner is too small for welding wire being used",
+          "Wire is tangled on the spool",
+          "Wire is not making contact with Feed Rollers",
+          "Feed Roller is not making enough contact with wire or is crushing flux-cored wire"
+        ],
+        "solutions": [
+          "Straighten Gun cable",
+          "Check gun liner for obstruction. Replace if necessary",
+          "Check that gun liner is correct size for wire",
+          "Check wire for cross winding or tangled spool",
+          "Check Feed Rollers and ensure correct groove for wire diameter is being used",
+          "Check Feed Tensioner and ensure it is set properly"
+        ]
+      },
+      {
+        "problem": "Welding Arc Not Stable",
+        "possible_causes": [
+          "Wire not feeding properly",
+          "Incorrect Contact Tip or liner size or excessive wear",
+          "Incorrect wire feed speed",
+          "Loose MIG Gun cable or ground cable",
+          "Damaged MIG Gun or loose connection within Gun",
+          "Incorrect polarity for process being run",
+          "Gas coverage may be insufficient or too high",
+          "Poor connection with workpiece"
+        ],
+        "solutions": [
+          "See first Troubleshooting section above",
+          "Replace with the proper tip or liner size for wire used",
+          "Adjust wire feed speed to achieve a more stable arc",
+          "Check to ensure that all connections are tight",
+          "Have a qualified technician inspect and repair/replace as necessary",
+          "Ensure polarity is correct for operation: DCEP for MIG welding and DCEN for Flux-Cored self-shielded welding",
+          "Ensure gas flow rate is set according to Settings Chart. Make sure MIG Gun Cable Connector is fully inserted into Wire Feed mechanism with no O-Rings exposed",
+          "Check the ground clamp connection to the workpiece and machine. Ensure the MIG Gun is properly secured"
+        ]
+      },
+      {
+        "problem": "Weak Arc Strength",
+        "possible_causes": [
+          "Incorrect line voltage",
+          "Improper gauge or length of cord",
+          "Not enough current"
+        ],
+        "solutions": [
+          "Check the line voltage and, if insufficient, have a licensed electrician remedy the situation",
+          "Do not use an extension cord on this Welder. Use only one of the supplied power cords for this Welder or an identical replacement cord",
+          "Switch current to proper setting for metal thickness"
+        ]
+      },
+      {
+        "problem": "Welder Does Not Function When Switched On",
+        "possible_causes": [
+          "Tripped thermal protection device",
+          "Circuit supplies insufficient input voltage or amperage",
+          "Faulty or improperly connected Trigger",
+          "Machine is in low- or over-voltage protection",
+          "Machine is in the incorrect mode"
+        ],
+        "solutions": [
+          "If a warning screen appears in the LCD Display window, Welder may have overheated and shut down. Stop and wait with the Power Switch ON for the Welder to cool. Refer to Duty Cycle on page 19",
+          "Verify that the circuit is designed to supply the required input voltage and amperage as detailed on the Specifications table",
+          "Ensure the gun connection is properly seated on machine. Qualified technician must check and secure/replace Trigger",
+          "Check input voltage and ensure it falls within the specified range. If input voltage is correct, press Reset Button on back of machine",
+          "Ensure the correct process has been selected"
+        ]
+      },
+      {
+        "problem": "LCD Display Does Not Light When Welder is Switched On",
+        "possible_causes": [
+          "Unit not connected to outlet properly",
+          "Outlet is unpowered",
+          "Plug does not have correct rating",
+          "Circuit breaker has tripped due to high input amperage",
+          "Input Power Cord is not seated properly"
+        ],
+        "solutions": [
+          "Verify the voltage at the outlet and the connection to the outlet",
+          "Check circuit breaker/GFCI devices; if any are tripped, determine and remedy cause before resetting",
+          "Make sure installed plug is correct rating. See Specifications on page 7",
+          "Press Reset Button on back of machine to reset circuit breaker",
+          "Ensure the twist lock input Power Cord is fully secured"
+        ]
+      },
+      {
+        "problem": "Wire Feeds, but Arc Does Not Ignite",
+        "possible_causes": [
+          "Improper ground connection",
+          "Improperly sized Contact Tip",
+          "Excessively worn Contact Tip",
+          "Dirty Contact Tip"
+        ],
+        "solutions": [
+          "Make certain that the workpiece is contacted properly by the Ground Clamp and that the workpiece is properly cleaned near the ground clamp and the welding location",
+          "Verify that Contact Tip is the proper size for welding wire. If needed, replace Contact Tip with proper size and type",
+          "Check that the hole in the tip is not deformed or enlarged. If needed, replace Contact Tip with proper size and type",
+          "Properly clean Contact Tip"
+        ]
+      },
+      {
+        "problem": "Porosity in the Weld Metal",
+        "possible_causes": [
+          "Shielding gas bottle is empty",
+          "Not enough or too much shielding gas",
+          "Dirty workpiece",
+          "Gun is being used too far away from workpiece",
+          "Polarity is incorrect for the application",
+          "Dirty welding wire is introducing contamination into the weld"
+        ],
+        "solutions": [
+          "Check gas bottle and replenish as necessary",
+          "Check gas regulator to ensure proper flow",
+          "Clean workpiece down to bare metal",
+          "Check CTWD (contact tip to work distance) for the proper procedure",
+          "Check the polarity and ensure it is DCEP for MIG and DCEN for Flux-Cored",
+          "Make certain that welding wire is clean and free of rust and residues"
+        ]
+      }
+    ]
+  },
+  "wire_feed_tension": {
+    "source_page": 15,
+    "solid_wire": "3-5 on tension scale",
+    "flux_core_wire": "2-3 on tension scale",
+    "note": "Too much force on flux-cored wire will crush it and may cause feeding issues"
+  },
+  "selection_chart": {
+    "source": "selection-chart.pdf",
+    "flux_core_fcaw": {
+      "skill_level": "Low to Moderate",
+      "shielding_gas": "No gas required",
+      "materials": "Steel, Stainless Steel",
+      "thickness": "18 Gauge to 5/16\"",
+      "applications": "Galvanized steel, Sewer fabrication, Pipe and fitting, Maintenance & repair",
+      "weld_cleanliness": "More spatter",
+      "notes": "Ideal for outdoor or windy conditions, Forgiving of less than ideal conditions, Good out of position welding capabilities, High deposition rate achievable"
+    },
+    "mig_gmaw": {
+      "skill_level": "Moderate to High",
+      "shielding_gas": "Gas required",
+      "materials": "Steel, Stainless Steel, Aluminum (requires spool gun)",
+      "thickness": "22 Gauge to 3/8\"",
+      "applications": "Sheet metal, Automotive body, Furniture, Structural steel",
+      "weld_cleanliness": "Clean, minimal spatter",
+      "notes": "Fast production (high welding speed), Easiest to learn, Clean welds with no slag, Better control on thin materials"
+    },
+    "stick_smaw": {
+      "skill_level": "Low to Moderate",
+      "shielding_gas": "No gas required",
+      "materials": "Steel, Stainless Steel, Cast Iron",
+      "thickness": "10 Gauge to 1/2\"",
+      "applications": "Flat bar tubing, Structural steel, Pressure vessels, Maintenance & repair",
+      "weld_cleanliness": "More spatter",
+      "notes": "Ideal for outdoor or windy conditions, Forgiving on rusty or dirty material, Deep penetration, Good choice for thicker materials"
+    },
+    "tig_gtaw": {
+      "skill_level": "High",
+      "shielding_gas": "Gas required",
+      "materials": "Steel, Stainless Steel, Chrome Moly, Aluminum (AC TIG required - not available on this model)",
+      "thickness": "24 Gauge to 3/16\"",
+      "applications": "Automotive, Motorsports, Bicycle frames, Thin wall tubing, Roll cages, Musical art",
+      "weld_cleanliness": "Extremely clean",
+      "notes": "Highest quality welds, Precise control, Can be used on a variety of materials, Process control"
+    }
+  }
+}

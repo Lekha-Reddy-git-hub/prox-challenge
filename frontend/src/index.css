@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vulcan-red: #CC0000;
+  --color-vulcan-dark: #1a1a2e;
+  --color-vulcan-darker: #121224;
+  --color-vulcan-surface: #1e1e36;
+  --color-vulcan-border: #2a2a4a;
+  --color-vulcan-text: #e0e0e8;
+  --color-vulcan-muted: #8888a0;
+}
+
+body {
+  margin: 0;
+  background: var(--color-vulcan-darker);
+  color: var(--color-vulcan-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-vulcan-border);
+  border-radius: 3px;
+}
+
+/* Markdown content styling */
+.markdown-content h1, .markdown-content h2, .markdown-content h3 {
+  color: white;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.markdown-content h1 { font-size: 1.25rem; font-weight: 700; }
+.markdown-content h2 { font-size: 1.1rem; font-weight: 600; }
+.markdown-content h3 { font-size: 1rem; font-weight: 600; }
+.markdown-content p { margin-bottom: 0.75em; line-height: 1.6; }
+.markdown-content ul, .markdown-content ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0.75em;
+}
+.markdown-content li { margin-bottom: 0.25em; line-height: 1.5; }
+.markdown-content code {
+  background: rgba(255,255,255,0.08);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+.markdown-content pre {
+  background: rgba(0,0,0,0.3);
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 0.75em;
+}
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+}
+.markdown-content strong { color: white; }
+.markdown-content blockquote {
+  border-left: 3px solid var(--color-vulcan-red);
+  padding-left: 1em;
+  margin: 0.75em 0;
+  color: var(--color-vulcan-muted);
+}
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.75em;
+}
+.markdown-content th, .markdown-content td {
+  border: 1px solid var(--color-vulcan-border);
+  padding: 0.5em 0.75em;
+  text-align: left;
+  font-size: 0.9em;
+}
+.markdown-content th {
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-weight: 600;
+}
